@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using InnoTech.LegosForLife.Core.Models;
+using InnoTech.LegosForLife.DataAccess.Entities;
 using InnoTech.LegosForLife.Domain.IRepositories;
 
 namespace InnoTech.LegosForLife.DataAccess.Repositories
@@ -24,6 +25,20 @@ namespace InnoTech.LegosForLife.DataAccess.Repositories
                     Name = pe.Name
                 })
                 .ToList();
+        }
+
+        public Product GetProductById(int id)
+        {
+            var entity = _ctx.Products.Select(productEntity => new ProductEntity()
+            {
+                Id = productEntity.Id,
+                Name = productEntity.Name
+            }).FirstOrDefault();
+            return new Product()
+            {
+                Id = entity.Id,
+                Name = entity.Name
+            };
         }
     }
 }

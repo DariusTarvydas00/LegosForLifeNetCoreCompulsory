@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using InnoTech.LegosForLife.Core.IServices;
@@ -17,6 +18,11 @@ namespace InnoTech.LegosForLife.Domain.Services
         public List<Product> GetProducts()
         {
             return _productRepository.FindAll();
+        }
+
+        public Product GetProductById(int id)
+        {
+            return _productRepository.GetProductById(id);
         }
     }
 }

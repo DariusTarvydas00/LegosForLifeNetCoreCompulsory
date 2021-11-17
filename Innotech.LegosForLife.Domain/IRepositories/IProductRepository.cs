@@ -6,5 +6,6 @@ namespace InnoTech.LegosForLife.Domain.IRepositories
     public interface IProductRepository
     {
         List<Product> FindAll();
+        Product GetProductById(int id);
     }
 }
