@@ -29,15 +29,28 @@ namespace InnoTech.LegosForLife.DataAccess.Repositories
 
         public Product GetProductById(int id)
         {
-            var entity = _ctx.Products.Select(productEntity => new ProductEntity()
+            var getProductEntity = _ctx.Products.Select(productEntity => new ProductEntity()
             {
                 Id = productEntity.Id,
                 Name = productEntity.Name
             }).FirstOrDefault();
             return new Product()
             {
-                Id = entity.Id,
-                Name = entity.Name
+                Id = getProductEntity.Id,
+                Name = getProductEntity.Name
+            };
+        }
+
+        public Product DeleteProduct(int id)
+        {
+            var deleteProductEntity = _ctx.Products.Remove(new ProductEntity()
+            {
+                Id = id,
+            }).Entity;
+            return new Product()
+            {
+                Id = deleteProductEntity.Id,
+                Name = deleteProductEntity.Name
             };
         }
     }
