@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Onion-Core", "Onion-Core", "{8685C8D1-FE70-435E-B402-2FF547096F54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Onion-Infrastructure", "Onion-Infrastructure", "{9A4D2006-6A28-4067-9316-996A5B55443A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Onion-Presentation", "Onion-Presentation", "{546B2B82-265A-45EE-A740-60AD92A58A06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.Core", "InnoTech.LegosForLife.Core\InnoTech.LegosForLife.Core.csproj", "{127E6DC7-2DFE-4ABC-BC19-B7A98F1BCEF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.Domain", "InnoTech.LegosForLife.Domain\InnoTech.LegosForLife.Domain.csproj", "{B3A291AF-5CF0-422D-A4B6-F4B7DFB3818D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.DataAccess", "InnoTech.LegosForLife.DataAccess\InnoTech.LegosForLife.DataAccess.csproj", "{5C551F5D-96C4-4996-8601-04F231BF9F76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.WebApi", "InnoTech.LegosForLife.WebApi\InnoTech.LegosForLife.WebApi.csproj", "{899CB34F-2A56-47AF-80F9-EB83F3316BB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.Security", "InnoTech.LegosForLife.Security\InnoTech.LegosForLife.Security.csproj", "{C6A9E4D9-31F3-41A3-9A24-EF1291E77185}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Onion-Core-Test", "Onion-Core-Test", "{3D3623AD-BA7E-48CE-99CB-F7831BC1A83E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.Core.Test", "InnoTech.LegosForLife.Core.Test\InnoTech.LegosForLife.Core.Test.csproj", "{69DAEF81-DD9F-45B4-96A7-55A7A7BE9C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.Domain.Test", "InnoTech.LegosForLife.Domain.Test\InnoTech.LegosForLife.Domain.Test.csproj", "{18D00957-4037-4C13-95F2-9B39A5676DCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Onion-Infrastructure-Test", "Onion-Infrastructure-Test", "{4DF3A385-B6F5-47B6-8D6E-3BFB230E8C67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.DataAccess.Test", "InnoTech.LegosForLife.DataAccess.Test\InnoTech.LegosForLife.DataAccess.Test.csproj", "{3D015226-ED51-4959-B1D3-1D5FC9382B28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Onion-Presentation-test", "Onion-Presentation-test", "{CBA7810B-5EE5-4BD3-AD1E-0919C6FB49A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoTech.LegosForLife.WebApi.Test", "InnoTech.LegosForLife.WebApi.Test\InnoTech.LegosForLife.WebApi.Test.csproj", "{B7A0F781-9D10-4B77-840E-0E3AC9C15650}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{127E6DC7-2DFE-4ABC-BC19-B7A98F1BCEF4} = {8685C8D1-FE70-435E-B402-2FF547096F54}
+		{B3A291AF-5CF0-422D-A4B6-F4B7DFB3818D} = {8685C8D1-FE70-435E-B402-2FF547096F54}
+		{5C551F5D-96C4-4996-8601-04F231BF9F76} = {9A4D2006-6A28-4067-9316-996A5B55443A}
+		{899CB34F-2A56-47AF-80F9-EB83F3316BB9} = {546B2B82-265A-45EE-A740-60AD92A58A06}
+		{C6A9E4D9-31F3-41A3-9A24-EF1291E77185} = {9A4D2006-6A28-4067-9316-996A5B55443A}
+		{69DAEF81-DD9F-45B4-96A7-55A7A7BE9C4A} = {3D3623AD-BA7E-48CE-99CB-F7831BC1A83E}
+		{18D00957-4037-4C13-95F2-9B39A5676DCE} = {3D3623AD-BA7E-48CE-99CB-F7831BC1A83E}
+		{3D015226-ED51-4959-B1D3-1D5FC9382B28} = {4DF3A385-B6F5-47B6-8D6E-3BFB230E8C67}
+		{B7A0F781-9D10-4B77-840E-0E3AC9C15650} = {CBA7810B-5EE5-4BD3-AD1E-0919C6FB49A8}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{127E6DC7-2DFE-4ABC-BC19-B7A98F1BCEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127E6DC7-2DFE-4ABC-BC19-B7A98F1BCEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127E6DC7-2DFE-4ABC-BC19-B7A98F1BCEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127E6DC7-2DFE-4ABC-BC19-B7A98F1BCEF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A291AF-5CF0-422D-A4B6-F4B7DFB3818D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A291AF-5CF0-422D-A4B6-F4B7DFB3818D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A291AF-5CF0-422D-A4B6-F4B7DFB3818D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A291AF-5CF0-422D-A4B6-F4B7DFB3818D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C551F5D-96C4-4996-8601-04F231BF9F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C551F5D-96C4-4996-8601-04F231BF9F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C551F5D-96C4-4996-8601-04F231BF9F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C551F5D-96C4-4996-8601-04F231BF9F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899CB34F-2A56-47AF-80F9-EB83F3316BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899CB34F-2A56-47AF-80F9-EB83F3316BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899CB34F-2A56-47AF-80F9-EB83F3316BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899CB34F-2A56-47AF-80F9-EB83F3316BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A9E4D9-31F3-41A3-9A24-EF1291E77185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A9E4D9-31F3-41A3-9A24-EF1291E77185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A9E4D9-31F3-41A3-9A24-EF1291E77185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A9E4D9-31F3-41A3-9A24-EF1291E77185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69DAEF81-DD9F-45B4-96A7-55A7A7BE9C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69DAEF81-DD9F-45B4-96A7-55A7A7BE9C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69DAEF81-DD9F-45B4-96A7-55A7A7BE9C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69DAEF81-DD9F-45B4-96A7-55A7A7BE9C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D00957-4037-4C13-95F2-9B39A5676DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D00957-4037-4C13-95F2-9B39A5676DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D00957-4037-4C13-95F2-9B39A5676DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D00957-4037-4C13-95F2-9B39A5676DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D015226-ED51-4959-B1D3-1D5FC9382B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D015226-ED51-4959-B1D3-1D5FC9382B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D015226-ED51-4959-B1D3-1D5FC9382B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D015226-ED51-4959-B1D3-1D5FC9382B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7A0F781-9D10-4B77-840E-0E3AC9C15650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A0F781-9D10-4B77-840E-0E3AC9C15650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A0F781-9D10-4B77-840E-0E3AC9C15650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A0F781-9D10-4B77-840E-0E3AC9C15650}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
