@@ -39,6 +39,7 @@ namespace InnoTech.LegosForLife.Domain.Services
 
         public Product DeleteProduct(int id)
         {
+            GetProductById(id);
             return _productRepository.DeleteProduct(id);
         }
 
@@ -57,6 +58,26 @@ namespace InnoTech.LegosForLife.Domain.Services
             {
                 Name = name
             };
+            return product;
+        }
+
+        public Product UpdateProduct(Product productUpdate)
+        {
+            checkProduct(productUpdate);
+            return _productRepository.UpdateProduct(productUpdate);
+        }
+
+        private Product checkProduct(Product product)
+        {
+            var productExists = GetProductById(product.Id);
+            if (string.IsNullOrEmpty(product.Name))
+            {
+                throw new InvalidDataException("Product should contain valid name");
+            }
+            if (!Regex.IsMatch(product.Name, @"^[a-zA-Z]+$"))
+            {
+                throw new InvalidDataException("Product should contain valid name");
+            }
             return product;
         }
     }

@@ -66,5 +66,20 @@ namespace InnoTech.LegosForLife.DataAccess.Repositories
                 Name = pEntity.Name
             };
         }
+
+        public Product UpdateProduct(Product productUpdate)
+        {
+            var pEntity = _ctx.Products.Update(new ProductEntity()
+            {
+                Id = productUpdate.Id,
+                Name = productUpdate.Name
+            }).Entity;
+            return new Product()
+            {
+                Id = pEntity.Id,
+                Name = pEntity.Name
+            };
+
+        }
     }
 }

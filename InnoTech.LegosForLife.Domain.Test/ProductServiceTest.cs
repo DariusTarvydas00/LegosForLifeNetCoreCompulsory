@@ -7,6 +7,7 @@ using InnoTech.LegosForLife.Core.Models;
 using InnoTech.LegosForLife.Domain.IRepositories;
 using InnoTech.LegosForLife.Domain.Services;
 using Moq;
+using Moq.Language.Flow;
 using Xunit;
 
 namespace InnoTech.LegosForLife.Domain.Test
@@ -98,10 +99,20 @@ namespace InnoTech.LegosForLife.Domain.Test
 
         [Theory]
         [ClassData(typeof(DataGenerator))] // Created inner class at the bottom of this class
-        public void CreateProduct_withInvalidData_Exceptions(string name)
+        public void CreateProduct_InvalidData_Exceptions(string name)
         {
             var ex = Assert.Throws<InvalidDataException>(() => _service.CreateProduct(name));
             Assert.Equal("Product should contain valid name", ex.Message);
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(0)]
+        [InlineData(null)]
+        public void DeleteProduct_InvalidData_Exception(int value)
+        {
+            var ex = Assert.Throws<InvalidDataException>(() => _service.GetProductById(value));
+            Assert.Equal("Product Id must be above zero", ex.Message);
         }
     }
 
