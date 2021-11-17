@@ -8,6 +8,7 @@ using Xunit;
 using System.Reflection;
 using InnoTech.LegosForLife.Core.IServices;
 using InnoTech.LegosForLife.Core.Models;
+using InnoTech.LegosForLife.WebApi.DTOs;
 using Moq;
 
 namespace InnoTech.LegosForLife.WebApi.Test.Controllers
@@ -141,7 +142,40 @@ namespace InnoTech.LegosForLife.WebApi.Test.Controllers
 
         #region Post Method
 
+        [Fact]
+        public void ProductController_HasPostProductMethod()
+        {
+            var method = typeof(ProductController)
+                .GetMethods().FirstOrDefault(m => "PostProduct".Equals(m.Name));
+            Assert.NotNull(method);
+        }
+
+        [Fact]
+        public void PostProductMethod_IsPublic()
+        {
+            var method = typeof(ProductController)
+                .GetMethods().FirstOrDefault(m => "PostProduct".Equals(m.Name));
+            Assert.True(method.IsPublic);
+        }
         
+        [Fact]
+        public void PostProductMethod_ReturnsProductsInActionResult()
+        {
+            var method = typeof(ProductController)
+                .GetMethods().FirstOrDefault(m => "PostProduct".Equals(m.Name));
+            Assert.Equal(typeof(ActionResult<PostProductDto>).FullName, method.ReturnType.FullName);
+        }
+
+        [Fact]
+        public void PostProductMethod_HasGetHttpAttribute()
+        {
+            var methodInfo = typeof(ProductController)
+                .GetMethods()
+                .FirstOrDefault(m => m.Name == "PostProduct");
+            var attr = methodInfo.CustomAttributes
+                .FirstOrDefault(ca => ca.AttributeType.Name == "HttpPostAttribute");
+            Assert.NotNull(attr);
+        }
 
         #endregion
         
@@ -164,11 +198,11 @@ namespace InnoTech.LegosForLife.WebApi.Test.Controllers
         }
         
         [Fact]
-        public void GetProductById_WithNoParams_ReturnsListOfProductsInActionResult()
+        public void GetProductById_ReturnsProductByIdActionResult()
         {
             var method = typeof(ProductController)
-                .GetMethods().FirstOrDefault(m => "GetAll".Equals(m.Name));
-            Assert.Equal(typeof(ActionResult<List<Product>>).FullName, method.ReturnType.FullName);
+                .GetMethods().FirstOrDefault(m => "GetProductById".Equals(m.Name));
+            Assert.Equal(typeof(ActionResult<GetProductByIdDTo>).FullName, method.ReturnType.FullName);
         }
 
         [Fact]

@@ -1,6 +1,6 @@
 ﻿namespace InnoTech.LegosForLife.WebApi.DTOs
 {
-    public class PostProductDto
+    public class PutProductDto
     {
         public string Name { get; set; }
     }

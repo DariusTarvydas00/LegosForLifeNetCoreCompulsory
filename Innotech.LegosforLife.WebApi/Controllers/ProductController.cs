@@ -3,6 +3,7 @@ using System.IO;
 using InnoTech.LegosForLife.Core.IServices;
 using InnoTech.LegosForLife.Core.Models;
 using InnoTech.LegosForLife.DataAccess.Entities;
+using InnoTech.LegosForLife.WebApi.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InnoTech.LegosForLife.WebApi.Controllers
@@ -25,10 +26,10 @@ namespace InnoTech.LegosForLife.WebApi.Controllers
         }
 
         [HttpGet("id")]
-        public ActionResult<ProductByIdDTo> GetProductById(int id)
+        public ActionResult<GetProductByIdDTo> GetProductById(int id)
         {
             var productFromDto = _productService.GetProductById(id);
-            return Ok(new ProductByIdDTo()
+            return Ok(new GetProductByIdDTo()
             {
                 Name = productFromDto.Name
             });
