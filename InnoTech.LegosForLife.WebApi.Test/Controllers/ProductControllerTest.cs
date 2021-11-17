@@ -93,7 +93,15 @@ namespace InnoTech.LegosForLife.WebApi.Test.Controllers
                 .GetMethods().FirstOrDefault(m => "GetAll".Equals(m.Name));
             Assert.NotNull(method);
         }
-        
+
+        [Fact]
+        public void ProductController_HasGetProductByIdMethod()
+        {
+            var method = typeof(ProductController)
+                .GetMethods().FirstOrDefault(m => "GetProductById".Equals(m.Name));
+            Assert.NotNull(method);
+        }
+
         [Fact]
         public void GetAll_WithNoParams_IsPublic()
         {

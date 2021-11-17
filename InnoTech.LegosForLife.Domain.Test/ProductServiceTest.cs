@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +6,6 @@ using InnoTech.LegosForLife.Core.Models;
 using InnoTech.LegosForLife.Domain.IRepositories;
 using InnoTech.LegosForLife.Domain.Services;
 using Moq;
-using Moq.Language.Flow;
 using Xunit;
 
 namespace InnoTech.LegosForLife.Domain.Test
@@ -92,7 +90,6 @@ namespace InnoTech.LegosForLife.Domain.Test
         [Fact]
         public void GetProductById_IdIntMaxValue_Exception()
         {
-            int maxValue = Int32.MaxValue;
             var ex = Assert.Throws<InvalidDataException>(() => _service.GetProductById(2147483647));
             Assert.Equal("Product Id limit reached", ex.Message);
         }
@@ -118,7 +115,7 @@ namespace InnoTech.LegosForLife.Domain.Test
 
     public class DataGenerator: IEnumerable<object[]>
     {
-        private readonly List<Object[]> _data = new List<object[]>()
+        private readonly List<object[]> _data = new List<object[]>()
         {
             new object[] {null},
             new object[] {22},

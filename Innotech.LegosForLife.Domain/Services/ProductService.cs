@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using InnoTech.LegosForLife.Core.IServices;
 using InnoTech.LegosForLife.Core.Models;
@@ -63,22 +60,16 @@ namespace InnoTech.LegosForLife.Domain.Services
 
         public Product UpdateProduct(Product productUpdate)
         {
-            checkProduct(productUpdate);
+            var productExists = GetProductById(productUpdate.Id);
+            if (string.IsNullOrEmpty(productUpdate.Name))
+            {
+                throw new InvalidDataException("Product should contain valid name");
+            }
+            if (!Regex.IsMatch(productUpdate.Name, @"^[a-zA-Z]+$"))
+            {
+                throw new InvalidDataException("Product should contain valid name");
+            }
             return _productRepository.UpdateProduct(productUpdate);
-        }
-
-        private Product checkProduct(Product product)
-        {
-            var productExists = GetProductById(product.Id);
-            if (string.IsNullOrEmpty(product.Name))
-            {
-                throw new InvalidDataException("Product should contain valid name");
-            }
-            if (!Regex.IsMatch(product.Name, @"^[a-zA-Z]+$"))
-            {
-                throw new InvalidDataException("Product should contain valid name");
-            }
-            return product;
         }
     }
 }

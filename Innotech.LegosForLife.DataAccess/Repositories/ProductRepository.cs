@@ -34,11 +34,13 @@ namespace InnoTech.LegosForLife.DataAccess.Repositories
                 Id = productEntity.Id,
                 Name = productEntity.Name
             }).FirstOrDefault();
-            return new Product()
-            {
-                Id = pEntity.Id,
-                Name = pEntity.Name
-            };
+            if (pEntity != null)
+                return new Product()
+                {
+                    Id = pEntity.Id,
+                    Name = pEntity.Name
+                };
+            return null;
         }
 
         public Product DeleteProduct(int id)

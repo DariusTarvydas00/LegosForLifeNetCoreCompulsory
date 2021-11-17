@@ -28,7 +28,7 @@ namespace InnoTech.LegosForLife.WebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Innotech.LegosforLife.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "InnoTech.LegosForLife.WebApi", Version = "v1" });
             });
             
             //Setting up Dependency Injection

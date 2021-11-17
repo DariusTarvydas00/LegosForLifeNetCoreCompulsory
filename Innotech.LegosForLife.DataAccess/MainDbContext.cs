@@ -1,4 +1,3 @@
-using InnoTech.LegosForLife.Core.Models;
 using InnoTech.LegosForLife.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 
