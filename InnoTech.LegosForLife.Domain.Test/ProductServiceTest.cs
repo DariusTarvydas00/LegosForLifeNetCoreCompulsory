@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using InnoTech.LegosForLife.Core.IServices;
@@ -94,5 +95,28 @@ namespace InnoTech.LegosForLife.Domain.Test
             var ex = Assert.Throws<InvalidDataException>(() => _service.GetProductById(2147483647));
             Assert.Equal("Product Id limit reached", ex.Message);
         }
+
+        [Theory]
+        [ClassData(typeof(DataGenerator))] // Created inner class at the bottom of this class
+        public void CreateProduct_withInvalidData_Exceptions(string name)
+        {
+            var ex = Assert.Throws<InvalidDataException>(() => _service.CreateProduct(name));
+            Assert.Equal("Product should contain valid name", ex.Message);
+        }
+    }
+
+    public class DataGenerator: IEnumerable<object[]>
+    {
+        private readonly List<Object[]> _data = new List<object[]>()
+        {
+            new object[] {null},
+            new object[] {22},
+            new object[] {-1},
+            new object[] {""}
+        };
+
+        public IEnumerator<object[]> GetEnumerator() => _data.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
