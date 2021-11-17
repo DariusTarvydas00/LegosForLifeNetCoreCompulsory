@@ -33,5 +33,15 @@ namespace InnoTech.LegosForLife.WebApi.Controllers
                 Name = productFromDto.Name
             });
         }
+
+        [HttpPost]
+        public ActionResult<PostProductDto> PostProduct([FromBody] PostProductDto dto)
+        {
+            var postProductDto = _productService.CreateProduct(dto.Name);
+            return Ok(new PostProductDto()
+            {
+                Name = postProductDto.Name
+            });
+        }
     }
 }

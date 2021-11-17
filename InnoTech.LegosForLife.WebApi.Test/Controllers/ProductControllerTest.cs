@@ -95,14 +95,6 @@ namespace InnoTech.LegosForLife.WebApi.Test.Controllers
         }
 
         [Fact]
-        public void ProductController_HasGetProductByIdMethod()
-        {
-            var method = typeof(ProductController)
-                .GetMethods().FirstOrDefault(m => "GetProductById".Equals(m.Name));
-            Assert.NotNull(method);
-        }
-
-        [Fact]
         public void GetAll_WithNoParams_IsPublic()
         {
             var method = typeof(ProductController)
@@ -151,6 +143,45 @@ namespace InnoTech.LegosForLife.WebApi.Test.Controllers
 
         
 
+        #endregion
+        
+        #region GetProductById
+        
+        [Fact]
+        public void ProductController_HasGetProductByIdMethod()
+        {
+            var method = typeof(ProductController)
+                .GetMethods().FirstOrDefault(m => "GetProductById".Equals(m.Name));
+            Assert.NotNull(method);
+        }
+
+        [Fact]
+        public void GetProductById_IsPublic()
+        {
+            var method = typeof(ProductController)
+                .GetMethods().FirstOrDefault(m => "GetProductById".Equals(m.Name));
+            Assert.True(method.IsPublic);
+        }
+        
+        [Fact]
+        public void GetProductById_WithNoParams_ReturnsListOfProductsInActionResult()
+        {
+            var method = typeof(ProductController)
+                .GetMethods().FirstOrDefault(m => "GetAll".Equals(m.Name));
+            Assert.Equal(typeof(ActionResult<List<Product>>).FullName, method.ReturnType.FullName);
+        }
+
+        [Fact]
+        public void GetProductById_HasGetHttpAttribute()
+        {
+            var methodInfo = typeof(ProductController)
+                .GetMethods()
+                .FirstOrDefault(m => m.Name == "GetProductById");
+            var attr = methodInfo.CustomAttributes
+                .FirstOrDefault(ca => ca.AttributeType.Name == "HttpGetAttribute");
+            Assert.NotNull(attr);
+        }
+        
         #endregion
         
     }
