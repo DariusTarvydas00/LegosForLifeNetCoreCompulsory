@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using InnoTech.LegosForLife.Core.IServices;
@@ -66,6 +67,32 @@ namespace InnoTech.LegosForLife.Domain.Test
                 .Returns(_expected);
             var actual = _service.GetProducts();
             Assert.Equal(_expected, actual);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-5)]
+        public void GetProductById_Less_Than_Zero_Exception(int value)
+        {
+            var ex = Assert.Throws<InvalidDataException>(() => _service.GetProductById(value));
+            Assert.Equal("Product Id must be above zero", ex.Message);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        public void GetProductById_Null_Exception(int value)
+        {
+            
+            var ex = Assert.Throws<InvalidDataException>(() => _service.GetProductById(value));
+            Assert.Equal("Product Id must be above zero", ex.Message);
+        }
+
+        [Fact]
+        public void GetProductById_IdIntMaxValue_Exception()
+        {
+            int maxValue = Int32.MaxValue;
+            var ex = Assert.Throws<InvalidDataException>(() => _service.GetProductById(2147483647));
+            Assert.Equal("Product Id limit reached", ex.Message);
         }
     }
 }

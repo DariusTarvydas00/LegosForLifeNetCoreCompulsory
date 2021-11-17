@@ -22,6 +22,15 @@ namespace InnoTech.LegosForLife.Domain.Services
 
         public Product GetProductById(int id)
         {
+            if (id > 2147483645)
+            {
+                throw new InvalidDataException("Product Id limit reached");
+            }
+            if (id < 1 || id == null || id == 0)
+            {
+                throw new InvalidDataException("Product Id must be above zero");
+            }
+
             return _productRepository.GetProductById(id);
         }
 
