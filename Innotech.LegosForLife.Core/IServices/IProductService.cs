@@ -9,5 +9,7 @@ namespace InnoTech.LegosForLife.Core.IServices
         Product GetProductById(int id);
 
         Product DeleteProduct(int id);
+
+        Product CreateProduct(string name);
     }
 }
